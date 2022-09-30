@@ -1,0 +1,9 @@
+ARG UBUNTU_VERSION
+
+FROM ubuntu:UBUNTU_VERSION
+
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends build-essential ca-certificates gcc-multilib g++-multilib \
+	&& rm -rf /var/lib/apt/lists/*
+
+ENRYPOINT ["/bin/sh"]
